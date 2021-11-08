@@ -1,10 +1,7 @@
 var a = 0;
-window.addEventListener('DOMContentLoaded', (event) => {
-    var button = document.getElementById('btn');
-});
 
-if(button.clicked == true)
+function buttonClick()
 {
-    a++;
-    console.log(a);
+    label = document.getElementById("a");
+    label.innerHTML = a++;
 }
