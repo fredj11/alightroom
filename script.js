@@ -30,7 +30,7 @@ function removeWorker(resource) {
 
 function updateText() {
     var pop = document.getElementById("population");
-    pop.innerHTML = "population: " + population;
+    pop.innerHTML = "Population: " + population;
 
     for (var i = 0; i < resources.length; i++) {
         var res = resources[i];
