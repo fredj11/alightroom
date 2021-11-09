@@ -1,4 +1,5 @@
 var population = 5;
+var weapons = 0;
 var availWorkers = population;
 var maxPop = population;
 var timerID;
@@ -32,7 +33,7 @@ function addWorker(resource){
 }
 
 function removeWorker(resource) {
-    if (availWorkers < 5 && popAssigned[resource] > 0) {
+    if (availWorkers < population && popAssigned[resource] > 0) {
         availWorkers++;
         popAssigned[resource]--;
         updateText();
@@ -41,9 +42,11 @@ function removeWorker(resource) {
 
 function updateText() {
     var pop = document.getElementById("population");
+    var w = document.getElementById("weapons");
     var workers = document.getElementById("availWorkers");
 
     pop.innerHTML = "Population: " + population + "/" + maxPop;
+    w.innerHTML = "Weapons: " + weapons;
     workers.innerHTML = "Available Workers: " + availWorkers;
 
     for (var i = 0; i < resources.length; i++) {
@@ -65,6 +68,7 @@ function addNumber() {
 
     // This can be done through purshase in some menu later
     buildHouse();
+    makeWeapon();
     increasePopulation();
 
     updateText();
@@ -79,9 +83,11 @@ function updateFoodBar() {
     }
     if (foodBar.value > 100) {
         foodBar.value = 100;
-    } else if (foodBar.value < 0) {
+    } else if (foodBar.value == 0) {
         foodBar.value = 0;
         // Do something when food runs out
+        // Does this work ??
+        window.location = "https://il8.picdn.net/shutterstock/videos/17253376/thumb/6.jpg";
     } else if (resourceAmounts["food"] > 0 && foodBar.value < 100) {
         foodBar.value += resourceAmounts["food"];
         resourceAmounts["food"] = 0;
@@ -92,6 +98,13 @@ function buildHouse() {
     if (resourceAmounts["wood"] >= 25) {
         resourceAmounts["wood"] -= 25;
         maxPop += 1;
+    }
+}
+
+function makeWeapon() {
+    if (resourceAmounts["stone"] >= 25) {
+        resourceAmounts["stone"] -= 25;
+        weapons++;
     }
 }
 

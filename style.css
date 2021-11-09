@@ -50,3 +50,9 @@
 .res-icon {
     width: 50px;
 }
+
+#weapons-section {
+    border: 3px solid black;
+    width: 25%;
+    float: left;
+}
