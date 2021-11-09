@@ -8,7 +8,8 @@
         <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
-<body onLoad="startTimer();" onUnload="stopTimer();">
+<!--modify startTimer parameter to change speed of resources-->
+<body onLoad="startTimer(500);" onUnload="stopTimer();">
     <h1 id="population">population: 5</h1>
 
     <button class="btn" onclick="addWorker('wood')">+</button>
