@@ -42,3 +42,11 @@
 #resource-table {
     margin: auto;
 }
+
+.resource-row {
+    width: 350px;
+}
+
+.res-icon {
+    width: 50px;
+}
