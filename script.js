@@ -1,5 +1,6 @@
 var population = 5;
 var availWorkers = population;
+var maxPop = population;
 var timerID;
 
 resources = ["wood", "stone", "food"]; // food has to be at the end of the list
@@ -11,6 +12,15 @@ popAssigned = {}; // resource: workers assigned to resource
 for (var i = 0; i < resources.length; i++) {
     resourceAmounts[resources[i]] = 0;
     popAssigned[resources[i]] = 0;
+}
+
+
+function startTimer(delay) {
+    timerID = setInterval(addNumber, delay);
+}
+
+function stopTimer() {
+    clearInterval(timerID);
 }
 
 function addWorker(resource){
@@ -30,8 +40,11 @@ function removeWorker(resource) {
 }
 
 function updateText() {
-    var pop = document.getElementById("availWorkers");
-    pop.innerHTML = "Available Workers: " + availWorkers;
+    var pop = document.getElementById("population");
+    var workers = document.getElementById("availWorkers");
+
+    pop.innerHTML = "Population: " + population + "/" + maxPop;
+    workers.innerHTML = "Available Workers: " + availWorkers;
 
     for (var i = 0; i < resources.length; i++) {
         var res = resources[i];
@@ -45,11 +58,16 @@ function addNumber() {
     for (var i = 0; i < resources.length-1; i++) {
         var res = resources[i];
         resourceAmounts[res] += popAssigned[res];
-        updateText();
     }
 
     // Update food separately
     updateFoodBar();
+
+    // This can be done through purshase in some menu later
+    buildHouse();
+    increasePopulation();
+
+    updateText();
 }
 
 function updateFoodBar() {
@@ -70,10 +88,17 @@ function updateFoodBar() {
     }
 }
 
-function startTimer(delay) {
-    timerID = setInterval(addNumber, delay);
+function buildHouse() {
+    if (resourceAmounts["wood"] >= 25) {
+        resourceAmounts["wood"] -= 25;
+        maxPop += 1;
+    }
 }
 
-function stopTimer() {
-    clearInterval(timerID);
+function increasePopulation() {
+    if (resourceAmounts["food"] >= 25 && maxPop > population) {
+        resourceAmounts["food"] -= 25;
+        population++;
+        availWorkers++;
+    }
 }
