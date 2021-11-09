@@ -1,11 +1,12 @@
 var population = 5;
+var availWorkers = population;
 var timerID;
 
 resources = ["wood", "stone", "food"]; // food has to be at the end of the list
 
 resourceAmounts = {}    // resource: amount of resource owned
 
-popAssigned = {}; // resource: population assigned to resource
+popAssigned = {}; // resource: workers assigned to resource
 
 for (var i = 0; i < resources.length; i++) {
     resourceAmounts[resources[i]] = 0;
@@ -13,24 +14,24 @@ for (var i = 0; i < resources.length; i++) {
 }
 
 function addWorker(resource){
-    if (population > 0) {
-        population--;
+    if (availWorkers > 0) {
+        availWorkers--;
         popAssigned[resource]++;
         updateText();
     }
 }
 
 function removeWorker(resource) {
-    if (population < 5 && popAssigned[resource] > 0) {
-        population++;
+    if (availWorkers < 5 && popAssigned[resource] > 0) {
+        availWorkers++;
         popAssigned[resource]--;
         updateText();
     }
 }
 
 function updateText() {
-    var pop = document.getElementById("population");
-    pop.innerHTML = "Population: " + population;
+    var pop = document.getElementById("availWorkers");
+    pop.innerHTML = "Available Workers: " + availWorkers;
 
     for (var i = 0; i < resources.length; i++) {
         var res = resources[i];
