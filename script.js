@@ -1,5 +1,4 @@
 var population = 5;
-var delay = 0;
 
 resources = ["wood", "stone", "food"];
 
@@ -17,7 +16,6 @@ for (var i = 0; i < resources.length; i++) {
 function addWorker(resource)
 {
     if (population > 0) {
-        delay++;
         stopTimer(resource);
         startTimer(resource);
         population--;
@@ -28,7 +26,6 @@ function addWorker(resource)
 
 function removeWorker(resource) {
     if (population < 5 && popAssigned[resource] > 0) {
-        delay--;
         stopTimer(resource);
         startTimer(resource);
         population++;
@@ -57,8 +54,8 @@ function addNumber(resource) {
 }
 
 function startTimer(resource) {
-    if (delay > 0) {
-        var timerID = setInterval(function() { addNumber(resource)}, 1000/delay);
+    if (popAssigned[resource] > 0) {
+        var timerID = setInterval(function() { addNumber(resource)}, 1000/popAssigned[resource]);
         timers[resource] = timerID;
     } 
 }
