@@ -63,6 +63,9 @@ function updateFoodBar() {
     } else if (foodBar.value < 0) {
         foodBar.value = 0;
         // Do something when food runs out
+    } else if (resourceAmounts["food"] > 0 && foodBar.value < 100) {
+        foodBar.value += resourceAmounts["food"];
+        resourceAmounts["food"] = 0;
     }
 }
 
