@@ -9,19 +9,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
 <body onLoad="startTimer();" onUnload="stopTimer();">
-    <h1 id="population">population: 5</h1>
-
-    <button class="btn" onclick="addWorker('wood')">+</button>
-    <h2 class="resource" id="wood">wood: 0 (0 workers)</h2>
-    <button class="btn" onclick="removeWorker('wood')">-</button>
-    <br>
-    <button class="btn" onclick="addWorker('stone')">+</button>
-    <h2 class="resource" id="stone">stone: 0 (0 workers)</h2>
-    <button class="btn" onclick="removeWorker('stone')">-</button>
-    <br>
-    <button class="btn" onclick="addWorker('food')">+</button>
-    <h2 class="resource" id="food">food: 0 (0 workers)</h2>
-    <button class="btn" onclick="removeWorker('food')">-</button>
-    <br>
+    <div id="div">
+        <h3 id="population">Population: 5</h3>
+        <button class="btn minus" onclick="removeWorker('wood')">-</button>
+        <h3 class="resource" id="wood">wood: 0 (0 workers)</h3>
+        <button class="btn plus" onclick="addWorker('wood')">+</button>
+        <br>
+        <button class="btn minus" onclick="removeWorker('stone')">-</button>
+        <h3 class="resource" id="stone">stone: 0 (0 workers)</h3>
+        <button class="btn plus" onclick="addWorker('stone')">+</button>
+        <br>
+        <button class="btn minus" onclick="removeWorker('food')">-</button>
+        <h3 class="resource" id="food">food: 0 (0 workers)</h3>
+        <button class="btn plus" onclick="addWorker('food')">+</button>
+        <br>
+    </div>
 </body>
 </html>

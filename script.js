@@ -2,11 +2,11 @@ var population = 5;
 
 resources = ["wood", "stone", "food"];
 
-resourceAmounts = {} // resource: amount of resource owned
+resourceAmounts = {}    // resource: amount of resource owned
 
-timers = {}; // resource: timerID of resource
+timers = {};            // resource: timerID of resource
 
-popAssigned = {}; // resource: population assigned to resource
+popAssigned = {};       // resource: population assigned to resource
 
 for (var i = 0; i < resources.length; i++) {
     resourceAmounts[resources[i]] = 0;

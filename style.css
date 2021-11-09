@@ -1,21 +1,38 @@
 .btn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    width: 75px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: black;
-    transition: 0.5s;
+    transition: .3s;
+}
+
+.plus {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.plus:hover {
+    background-color: rgb(139, 233, 31);
+}
+
+.minus {
+    background-color: #a80303;
+    color: white;
+}
+
+.minus:hover {
+    background-color: rgb(255, 31, 31);
 }
 
 .resource {
     display: inline-block;
+}
+
+#div {
+    width: 50%;
+    height: 75%;
+    margin: auto;
+    text-align: center;
 }
