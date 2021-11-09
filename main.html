@@ -8,8 +8,20 @@
         <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
-<body>
-    <button id="btn" onclick="buttonClick()">Click Me</button>
-    <h1 id="a">0</h1>
+<body onLoad="startTimer();" onUnload="stopTimer();">
+    <h1 id="population">population: 5</h1>
+
+    <button class="btn" onclick="addWorker('wood')">+</button>
+    <h2 class="resource" id="wood">wood: 0 (0 workers)</h2>
+    <button class="btn" onclick="removeWorker('wood')">-</button>
+    <br>
+    <button class="btn" onclick="addWorker('stone')">+</button>
+    <h2 class="resource" id="stone">stone: 0 (0 workers)</h2>
+    <button class="btn" onclick="removeWorker('stone')">-</button>
+    <br>
+    <button class="btn" onclick="addWorker('food')">+</button>
+    <h2 class="resource" id="food">food: 0 (0 workers)</h2>
+    <button class="btn" onclick="removeWorker('food')">-</button>
+    <br>
 </body>
 </html>
