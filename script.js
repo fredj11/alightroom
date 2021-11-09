@@ -1,7 +1,7 @@
 var population = 5;
 var timerID;
 
-resources = ["wood", "stone", "food"];
+resources = ["wood", "stone", "food"]; // food has to be at the end of the list
 
 resourceAmounts = {}    // resource: amount of resource owned
 
@@ -41,10 +41,28 @@ function updateText() {
 }
 
 function addNumber() {
-    for (var i = 0; i < resources.length; i++) {
+    for (var i = 0; i < resources.length-1; i++) {
         var res = resources[i];
         resourceAmounts[res] += popAssigned[res];
         updateText();
+    }
+
+    // Update food separately
+    updateFoodBar();
+}
+
+function updateFoodBar() {
+    var foodBar = document.getElementById("foodstatus");
+    resourceAmounts["food"] += popAssigned["food"] - 2;
+    if (resourceAmounts["food"] < 0) {
+        foodBar.value += resourceAmounts["food"];
+        resourceAmounts["food"] = 0;
+    }
+    if (foodBar.value > 100) {
+        foodBar.value = 100;
+    } else if (foodBar.value < 0) {
+        foodBar.value = 0;
+        // Do something when food runs out
     }
 }
 
