@@ -16,7 +16,6 @@ for (var i = 0; i < resources.length; i++) {
     popAssigned[resources[i]] = 0;
 }
 
-
 function startTimer(delay) {
     timerID = setInterval(addNumber, delay);
 }
@@ -88,7 +87,7 @@ function updateFoodBar() {
         foodBar.value = 0;
         // Do something when food runs out
         // Does this work ??
-        window.location = "https://il8.picdn.net/shutterstock/videos/17253376/thumb/6.jpg";
+        window.location = "gameover.html";
     } else if (resourceAmounts["food"] > 0 && foodBar.value < 100) {
         foodBar.value += resourceAmounts["food"];
         resourceAmounts["food"] = 0;
