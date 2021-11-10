@@ -1,3 +1,3 @@
 function restart() {
-    window.location = "main.html";
+    window.location.assign("main.html");
 }

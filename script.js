@@ -89,7 +89,7 @@ function updateFoodBar() {
         foodBar.value = 0;
         // Do something when food runs out
         // Does this work ??
-        window.location = "gameover.html";
+        window.location.assign("gameover.html");
     } else if (resourceAmounts["food"] > 0 && foodBar.value < fbMax) {
         foodBar.value += resourceAmounts["food"];
         resourceAmounts["food"] = 0;
