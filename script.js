@@ -1,5 +1,6 @@
 var population = 5;
 var weapons = 0;
+var multiplier = 5;
 var availWorkers = population;
 var maxPop = population;
 var timerID;
@@ -95,22 +96,22 @@ function updateFoodBar() {
 }
 
 function buildHouse() {
-    while (resourceAmounts["wood"] >= 25) {
-        resourceAmounts["wood"] -= 25;
+    while (resourceAmounts["wood"] >= population*multiplier) {
+        resourceAmounts["wood"] -= population*multiplier;
         maxPop += 1;
     }
 }
 
 function makeWeapon() {
-    while (resourceAmounts["stone"] >= 25) {
-        resourceAmounts["stone"] -= 25;
+    while (resourceAmounts["stone"] >= population*multiplier) {
+        resourceAmounts["stone"] -= population*multiplier;
         weapons++;
     }
 }
 
 function increasePopulation() {
-    while (resourceAmounts["food"] >= 25 && maxPop > population) {
-        resourceAmounts["food"] -= 25;
+    while (resourceAmounts["food"] >= population*multiplier && maxPop > population) {
+        resourceAmounts["food"] -= population*multiplier;
         population++;
         availWorkers++;
     }
