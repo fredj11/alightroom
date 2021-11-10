@@ -15,9 +15,9 @@
     </section>
     <section class="sections" id="stats-section">
         <h3 id="next-cost">Next cost: 25</h3>
-        <button class="shop-button" id="buyHouseBtn" onclick="buildHouse()" disabled>Buy Hut</button>
-        <button class="shop-button" id="addPopBtn" onclick="increasePopulation()" disabled>Add Worker</button>
-        <button class="shop-button" id="craftWpnBtn" onclick="makeWeapon()" disabled>Craft Weapon</button>
+        <div class="shop-button-div"><img class="shop-button-img" src="images/hut.png"><button class="shop-button" id="buyHouseBtn" onclick="buildHouse()" disabled>Buy Hut</button></div>
+        <div class="shop-button-div"><img class="shop-button-img" src="images/pop.png"><button class="shop-button" id="addPopBtn" onclick="increasePopulation()" disabled>Add Worker</button></div>
+        <div class="shop-button-div"><img class="shop-button-img" src="images/weapon.png"><button class="shop-button" id="craftWpnBtn" onclick="makeWeapon()" disabled>Craft Weapon</button></div>
     </section>
     
     <div id="div">
@@ -33,7 +33,7 @@
                 <td><button class="btn minus" onclick="removeWorker('food', 5)">5</button></td>
                 <td><button class="btn minus" onclick="removeWorker('food', 1)">1</button></td>
                 <td><img class="res-icon" src="images/food.png" alt="food"></td>
-                <td class="resource-row"><h3 class="resource" id="food">food: 0 (0 workers)</h3></td>
+                <td class="resource-row"><h4 class="resource" id="food">food: 0 (0 workers)</h4></td>
                 <td><button class="btn plus" onclick="addWorker('food', 1)">1</button></td>
                 <td><button class="btn plus" onclick="addWorker('food', 5)">5</button></td>
                 <td><button class="btn plus" onclick="addWorker('food', 10)">10</button></td>
@@ -43,7 +43,7 @@
                 <td><button class="btn minus" onclick="removeWorker('wood', 5)">5</button></td>
                 <td><button class="btn minus" onclick="removeWorker('wood', 1)">1</button></td>
                 <td><img class="res-icon" src="images/wood.png" alt="wood"></td>
-                <td class="resource-row"><h3 class="resource" id="wood">wood: 0 (0 workers)</h3></td>
+                <td class="resource-row"><h4 class="resource" id="wood">wood: 0 (0 workers)</h4></td>
                 <td><button class="btn plus" onclick="addWorker('wood', 1)">1</button></td>
                 <td><button class="btn plus" onclick="addWorker('wood', 5)">5</button></td>
                 <td><button class="btn plus" onclick="addWorker('wood', 10)">10</button></td>
@@ -52,7 +52,7 @@
                 <td><button class="btn minus" onclick="removeWorker('stone', 5)">5</button></td>
                 <td><button class="btn minus" onclick="removeWorker('stone', 1)">1</button></td>
                 <td><img class="res-icon" src="images/stone.png" alt="stone"></td>
-                <td class="resource-row"><h3 class="resource" id="stone">stone: 0 (0 workers)</h3></td>
+                <td class="resource-row"><h4 class="resource" id="stone">stone: 0 (0 workers)</h4></td>
                 <td><button class="btn plus" onclick="addWorker('stone', 1)">1</button></td>
                 <td><button class="btn plus" onclick="addWorker('stone', 5)">5</button></td>
                 <td><button class="btn plus" onclick="addWorker('stone', 10)">10</button></td>

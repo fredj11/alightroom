@@ -44,7 +44,7 @@
 }
 
 .resource-row {
-    width: 50%;
+    width: 60%;
 }
 
 .res-icon {
@@ -92,21 +92,30 @@
     transform: rotate(360deg)
 }
 
+.shop-button-div {
+    width: 100%;
+    display: flex;
+}
+
 .shop-button {
-    width: 98%;
-    border-radius: 10px;
     border: none;
+    height: 50px;
+    width: 98%; 
+    margin: 1%;
+    border-radius: 10px;
     background-color: rgb(28, 95, 1);
     color: rgb(211, 211, 211);
     cursor: pointer;
-    margin: 1%;
-    height: 50px;
 }
 
 .shop-button:disabled {
     background-color: rgba(28, 95, 1, 0.404);
     color: rgb(175, 175, 175);
     cursor: not-allowed;
+}
+
+.shop-button-img {
+    height: 50px;
 }
 
 #next-cost {
