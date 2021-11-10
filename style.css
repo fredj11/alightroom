@@ -91,3 +91,17 @@
     transition: 2s;
     transform: rotate(360deg)
 }
+
+.shop-button {
+    width: 98%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(28, 95, 1);
+    color: lightgray;
+    margin: 1%;
+    height: 50px;
+}
+
+#next-cost {
+    text-align: center;
+}
