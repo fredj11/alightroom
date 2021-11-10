@@ -6,6 +6,7 @@ var maxPop = population;
 var timerID;
 
 resources = ["wood", "stone", "food"]; // food has to be at the end of the list
+shopButtons = ["buyHouseBtn", "craftWpnBtn", "addPopBtn"]
 
 resourceAmounts = {}    // resource: amount of resource owned
 
@@ -67,10 +68,7 @@ function addNumber() {
     // Update food separately
     updateFoodBar();
 
-    // This can be done through purshase in some menu later
-    buildHouse();
-    makeWeapon();
-    increasePopulation();
+    updateShopBtns();
 
     updateText();
 }
@@ -96,24 +94,41 @@ function updateFoodBar() {
     }
 }
 
-function buildHouse() {
-    while (resourceAmounts["wood"] >= population*multiplier) {
-        resourceAmounts["wood"] -= population*multiplier;
-        maxPop += 1;
+function updateShopBtns() {
+    for (var i = 0; i < resources.length-1; i++) {
+        var res = resources[i];
+        if (resourceAmounts[res] >= population*multiplier) {
+            var shopBtn = document.getElementById(shopButtons[i]);
+            shopBtn.disabled = false;
+        }
     }
+
+    // Handle food separately
+    var res = resources[resources.length-1]
+    if (resourceAmounts[res] >= population*multiplier && population < maxPop) {
+        var shopBtn = document.getElementById(shopButtons[i]);
+        shopBtn.disabled = false;
+    }
+}
+
+function buildHouse() {
+    resourceAmounts["wood"] -= population*multiplier;
+    maxPop += 1;
+    var woodBtn = document.getElementById("buyHouseBtn");
+    woodBtn.disabled = true;
 }
 
 function makeWeapon() {
-    while (resourceAmounts["stone"] >= population*multiplier) {
-        resourceAmounts["stone"] -= population*multiplier;
-        weapons++;
-    }
+    resourceAmounts["stone"] -= population*multiplier;
+    weapons++;
+    var weaponBtn = document.getElementById("craftWpnBtn");
+    weaponBtn.disabled = true;
 }
 
 function increasePopulation() {
-    while (resourceAmounts["food"] >= population*multiplier && maxPop > population) {
-        resourceAmounts["food"] -= population*multiplier;
-        population++;
-        availWorkers++;
-    }
+    resourceAmounts["food"] -= population*multiplier;
+    population++;
+    availWorkers++;
+    var foodBtn = document.getElementById("addPopBtn");
+    foodBtn.disabled = true;
 }
