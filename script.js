@@ -44,7 +44,7 @@ function removeWorker(resource, num) {
 function updateText() {
     var pop = document.getElementById("population");
     var w = document.getElementById("weapons");
-    var s = document.getElementById("stats");
+    var s = document.getElementById("next-cost");
     var workers = document.getElementById("availWorkers");
 
     pop.innerHTML = "Population: " + population + "/" + maxPop;

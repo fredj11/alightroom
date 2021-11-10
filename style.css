@@ -97,9 +97,16 @@
     border-radius: 10px;
     border: none;
     background-color: rgb(28, 95, 1);
-    color: lightgray;
+    color: rgb(211, 211, 211);
+    cursor: pointer;
     margin: 1%;
     height: 50px;
+}
+
+.shop-button:disabled {
+    background-color: rgba(28, 95, 1, 0.404);
+    color: rgb(175, 175, 175);
+    cursor: not-allowed;
 }
 
 #next-cost {
