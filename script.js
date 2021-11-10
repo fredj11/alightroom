@@ -44,10 +44,12 @@ function removeWorker(resource, num) {
 function updateText() {
     var pop = document.getElementById("population");
     var w = document.getElementById("weapons");
+    var s = document.getElementById("stats");
     var workers = document.getElementById("availWorkers");
 
     pop.innerHTML = "Population: " + population + "/" + maxPop;
     w.innerHTML = "Weapons: " + weapons;
+    s.innerHTML = "Next cost: " + population*multiplier;
     workers.innerHTML = "Available Workers: " + availWorkers;
 
     for (var i = 0; i < resources.length; i++) {
@@ -84,7 +86,7 @@ function updateFoodBar() {
     }
     if (foodBar.value > 100) {
         foodBar.value = 100;
-    } else if (foodBar.value == 0) {
+    } else if (foodBar.value <= 0) {
         foodBar.value = 0;
         // Do something when food runs out
         // Does this work ??

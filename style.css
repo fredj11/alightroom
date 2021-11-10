@@ -52,8 +52,15 @@
     padding-left: 10px;
 }
 
-#weapons-section {
+.sections {
     border: 3px solid black;
-    width: 25%;
+    width: 20%;
+}
+
+#weapons-section {
     float: left;
+}
+
+#stats-section {
+    float: right;
 }
