@@ -24,18 +24,18 @@ function stopTimer() {
     clearInterval(timerID);
 }
 
-function addWorker(resource){
-    if (availWorkers > 0) {
-        availWorkers--;
-        popAssigned[resource]++;
+function addWorker(resource, num){
+    if (availWorkers >= num) {
+        availWorkers -= num;
+        popAssigned[resource] += num;
         updateText();
     }
 }
 
-function removeWorker(resource) {
-    if (availWorkers < population && popAssigned[resource] > 0) {
-        availWorkers++;
-        popAssigned[resource]--;
+function removeWorker(resource, num) {
+    if (popAssigned[resource] >= num) {
+        availWorkers += num;
+        popAssigned[resource] -= num;
         updateText();
     }
 }
@@ -95,21 +95,21 @@ function updateFoodBar() {
 }
 
 function buildHouse() {
-    if (resourceAmounts["wood"] >= 25) {
+    while (resourceAmounts["wood"] >= 25) {
         resourceAmounts["wood"] -= 25;
         maxPop += 1;
     }
 }
 
 function makeWeapon() {
-    if (resourceAmounts["stone"] >= 25) {
+    while (resourceAmounts["stone"] >= 25) {
         resourceAmounts["stone"] -= 25;
         weapons++;
     }
 }
 
 function increasePopulation() {
-    if (resourceAmounts["food"] >= 25 && maxPop > population) {
+    while (resourceAmounts["food"] >= 25 && maxPop > population) {
         resourceAmounts["food"] -= 25;
         population++;
         availWorkers++;

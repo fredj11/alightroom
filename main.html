@@ -21,21 +21,33 @@
                 <progress id="foodstatus" max="100" value="100"></progress>
             </tr>
             <tr>
-                <td><button class="btn minus" onclick="removeWorker('food')">-</button></td>
+                <td><button class="btn minus" onclick="removeWorker('food', 100)">100</button></td>
+                <td><button class="btn minus" onclick="removeWorker('food', 10)">10</button></td>
+                <td><button class="btn minus" onclick="removeWorker('food', 1)">1</button></td>
                 <td><img class="res-icon" src="images/food.jpg" alt="food"></td>
                 <td class="resource-row"><h3 class="resource" id="food">food: 0 (0 workers)</h3></td>
-                <td><button class="btn plus" onclick="addWorker('food')">+</button></td>
+                <td><button class="btn plus" onclick="addWorker('food', 1)">1</button></td>
+                <td><button class="btn plus" onclick="addWorker('food', 10)">10</button></td>
+                <td><button class="btn plus" onclick="addWorker('food', 100)">100</button></td>
             </tr>
             <tr>
-                <td><button class="btn minus" onclick="removeWorker('wood')">-</button></td>
+                <td><button class="btn minus" onclick="removeWorker('wood', 100)">100</button></td>
+                <td><button class="btn minus" onclick="removeWorker('wood', 10)">10</button></td>
+                <td><button class="btn minus" onclick="removeWorker('wood', 1)">1</button></td>
                 <td><img class="res-icon" src="images/wood.jpg" alt="wood"></td>
                 <td class="resource-row"><h3 class="resource" id="wood">wood: 0 (0 workers)</h3></td>
-                <td><button class="btn plus" onclick="addWorker('wood')">+</button></td>
+                <td><button class="btn plus" onclick="addWorker('wood', 1)">1</button></td>
+                <td><button class="btn plus" onclick="addWorker('wood', 10)">10</button></td>
+                <td><button class="btn plus" onclick="addWorker('wood', 100)">100</button></td>
             </tr>
-                <td><button class="btn minus" onclick="removeWorker('stone')">-</button></td>
+                <td><button class="btn minus" onclick="removeWorker('stone', 100)">100</button></td>
+                <td><button class="btn minus" onclick="removeWorker('stone', 10)">10</button></td>
+                <td><button class="btn minus" onclick="removeWorker('stone')">1</button></td>
                 <td><img class="res-icon" src="images/stone.jpg" alt="stone"></td>
                 <td class="resource-row"><h3 class="resource" id="stone">stone: 0 (0 workers)</h3></td>
-                <td><button class="btn plus" onclick="addWorker('stone')">+</button></td>
+                <td><button class="btn plus" onclick="addWorker('stone', 1)">1</button></td>
+                <td><button class="btn plus" onclick="addWorker('stone', 10)">10</button></td>
+                <td><button class="btn plus" onclick="addWorker('stone', 100)">100</button></td>
         </table>
     </div>
 </body>
