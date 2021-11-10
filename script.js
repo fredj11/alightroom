@@ -16,7 +16,6 @@ for (var i = 0; i < resources.length; i++) {
     popAssigned[resources[i]] = 0;
 }
 
-
 function startTimer(delay) {
     timerID = setInterval(addNumber, delay);
 }
@@ -65,7 +64,6 @@ function addNumber() {
         var res = resources[i];
         resourceAmounts[res] += popAssigned[res];
     }
-
     // Update food separately
     updateFoodBar();
 
@@ -80,18 +78,19 @@ function addNumber() {
 function updateFoodBar() {
     var foodBar = document.getElementById("foodstatus");
     resourceAmounts["food"] += popAssigned["food"] - 2;
+    fbMax = foodBar.max;
     if (resourceAmounts["food"] < 0) {
         foodBar.value += resourceAmounts["food"];
         resourceAmounts["food"] = 0;
     }
-    if (foodBar.value > 100) {
-        foodBar.value = 100;
+    if (foodBar.value >= fbMax) {
+        foodBar.value = fbMax;
     } else if (foodBar.value <= 0) {
         foodBar.value = 0;
         // Do something when food runs out
         // Does this work ??
-        window.location = "https://il8.picdn.net/shutterstock/videos/17253376/thumb/6.jpg";
-    } else if (resourceAmounts["food"] > 0 && foodBar.value < 100) {
+        window.location = "gameover.html";
+    } else if (resourceAmounts["food"] > 0 && foodBar.value < fbMax) {
         foodBar.value += resourceAmounts["food"];
         resourceAmounts["food"] = 0;
     }
