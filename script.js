@@ -17,6 +17,24 @@ for (var i = 0; i < resources.length; i++) {
     popAssigned[resources[i]] = 0;
 }
 
+function waitForStart() {
+    btns = document.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].disabled = true;
+    }
+}
+
+function startGame() {
+    btns = document.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].disabled = false;
+    }
+    startBtn = document.getElementById("start_button");
+    startBtn.style.visibility = "hidden";
+    startBtn.disabled = true;
+    startTimer(500);
+}
+
 function startTimer(delay) {
     timerID = setInterval(addNumber, delay);
 }

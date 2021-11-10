@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="favicon.ico">
     </head>
-<body onLoad="startTimer(500);" onUnload="stopTimer();" style="background-color: yellowgreen;">
+<body onload="waitForStart()" style="background-color: yellowgreen;">
     <section class="sections" id="weapons-section">
         <h3 id="weapons">Weapons: 0</h3>
     </section>
@@ -58,5 +58,6 @@
                 <td><button class="btn plus" onclick="addWorker('stone', 10)">10</button></td>
         </table>
     </div>
+    <button id="start_button" onclick="startGame()">Start Game</button>
 </body>
 </html>
