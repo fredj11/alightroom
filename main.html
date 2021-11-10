@@ -7,6 +7,7 @@
         <title>A Light Room</title>
         <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico">
     </head>
 <body onLoad="startTimer(500);" onUnload="stopTimer();">
     <section class="sections" id="weapons-section">
@@ -14,6 +15,8 @@
     </section>
     <section class="sections" id="stats-section">
         <h3 id="stats">Next cost: 25</h3>
+        <button id="buyHouseBtn" onclick="upgrade()">Buy House</button>
+        <button id="addPopBtn" onclick="reset()">Population +1</button>
     </section>
     
     <div id="div">
