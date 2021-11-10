@@ -1,4 +1,4 @@
-var population = 50;
+var population = 5;
 var weapons = 0;
 var multiplier = 5;
 var availWorkers = population;
