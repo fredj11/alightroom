@@ -5,6 +5,8 @@ var availWorkers = population;
 var maxPop = population;
 var timerID;
 
+var days = 0;
+
 resources = ["wood", "stone", "food"]; // food has to be at the end of the list
 shopButtons = ["buyHouseBtn", "craftWpnBtn", "addPopBtn"]
 
@@ -64,12 +66,14 @@ function updateText() {
     var pop = document.getElementById("population");
     var w = document.getElementById("weapons");
     var s = document.getElementById("next-cost");
+    var dayTxt = document.getElementById("daysPassed");
     var workers = document.getElementById("availWorkers");
 
     pop.innerHTML = "Population: " + population + "/" + maxPop;
     w.innerHTML = "Weapons: " + weapons;
     s.innerHTML = "Next cost: " + population*multiplier;
     workers.innerHTML = "Available Workers: " + availWorkers;
+    dayTxt.innerHTML = "Day " + days;
 
     for (var i = 0; i < resources.length; i++) {
         var res = resources[i];
@@ -80,6 +84,7 @@ function updateText() {
 }
 
 function addNumber() {
+    days++;
     for (var i = 0; i < resources.length-1; i++) {
         var res = resources[i];
         resourceAmounts[res] += popAssigned[res];
