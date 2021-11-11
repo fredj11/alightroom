@@ -46,28 +46,22 @@ function stopTimer() {
     clearInterval(timerID);
 }
 
-// if the num is 0, add as many workers as possible
-function addWorker(resource, num){
-    if (num == 0) {
-        popAssigned[resource] += availWorkers;
-        availWorkers = 0;
-        updateText();
-    }
-    else if (availWorkers >= num) {
+
+function addWorker(resource, num=availWorkers){
+    if (availWorkers >= num) {
         availWorkers -= num;
         popAssigned[resource] += num;
         updateText();
     }
 }
 
-// if the num is 0, remove as many workers as possible
-function removeWorker(resource, num) {
+// if the num is 0, remove all workers
+function removeWorker(resource, num=0) {
     if (num == 0) {
-        availWorkers += popAssigned[resource];
-        popAssigned[resource] = 0;
-        updateText();
+        num = popAssigned[resource];
     }
-    else if (popAssigned[resource] >= num) {
+
+    if (popAssigned[resource] >= num) {
         availWorkers += num;
         popAssigned[resource] -= num;
         updateText();
