@@ -18,6 +18,7 @@ for (var i = 0; i < resources.length; i++) {
 }
 
 function waitForStart() {
+    updateText();
     btns = document.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
         btns[i].disabled = true;
