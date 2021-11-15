@@ -1,2 +1,2 @@
-# A Light Room
-## Basically the off-brand Wish version of a Dark Room
+# Mighty Empire
+## Do stuff and your Empire becomes Mighty
